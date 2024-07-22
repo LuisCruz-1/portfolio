@@ -771,7 +771,7 @@ h2 {
 
 /* attempt fix bg rect in ios */
 a rect {
-  background-color: white; 
+  fill: white!important; 
 }
 
 
