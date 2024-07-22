@@ -328,13 +328,23 @@
 
         <div id="container-stack" style="display: flex; flex-direction: row;">
 
-          <svg xmlns="http://www.w3.org/2000/svg" height="222" fill="none" style="width: 330;">
+<!--           <svg xmlns="http://www.w3.org/2000/svg" height="222" fill="none" style="width: 330;">
 
             <mask id="b" width="100%" height="100%" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha">
               <path fill="url(#a)" d="M328 0H0v221h328V0Z"></path>
             </mask>
 
-            <g mask="url(#b)">
+            <g mask="url(#b)"> -->
+              <svg xmlns="http://www.w3.org/2000/svg" height="222" fill="none" style="width: 330;">
+                <!-- Removemos la máscara y el grupo con máscara -->
+                
+                <!-- Añadimos un rectángulo blanco de fondo -->
+                <rect width="100%" height="100%" fill="white"/>
+              
+                <!-- Añadimos las líneas de fondo directamente -->
+                <g stroke="#E9E9EB">
+                  <path d="M-37 41.5h701M-37 104.5h701M-37 178.5h701M-37 115.5h701M244.5-68v557M83.5-68v557M94.5-68v557M158.5-68v557M169.5-68v557M234.5-68v557"/>
+                </g>
 
               <path style="stroke: #E9E9EB;"
                 d="M-37 41.5h701M-37 104.5h701M-37 178.5h701M-37 115.5h701M244.5-68v557M83.5-68v557M94.5-68v557M158.5-68v557M169.5-68v557M234.5-68v557">
