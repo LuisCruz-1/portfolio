@@ -440,6 +440,7 @@ h2 {
     grid-column: span 2;
     overflow: hidden;
     justify-content: space-between;
+    position: relative;
   }
 
   &.stack {
