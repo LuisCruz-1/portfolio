@@ -769,6 +769,12 @@ h2 {
 
 
 
+/* attempt fix bg rect in ios */
+a rect {
+  background-color: white; 
+}
+
+
 /* Responsive css */
 @media (min-width: 768px) and (max-width: 1023px) {
   /* Tablet: 2 columnas */
