@@ -1,33 +1,33 @@
 const projects = {
-    //ATTENDANCE APP
-    1: {
-      "title": "Attendance APP",
-      "subtitle": "Aplicación móvil para optimizar la toma de asistencia diaria",
-      "date": "Fecha de inicio: [Fecha no especificada]",
-      "status": "Estado: [No especificado]",
-      "client": "Colegio ANAVI",
-      "description": "Attendance APP es una aplicación móvil diseñada para optimizar y agilizar el proceso de toma de asistencia diaria en el Colegio ANAVI. El proyecto se centró en la creación de una herramienta eficiente que permitiera a los inspectores gestionar la asistencia de los estudiantes de manera rápida y efectiva, además de proporcionar funcionalidades para consultar registros anteriores y generar informes.",
-      "context": "Antes de la implementación de Attendance APP, el proceso de toma de asistencia en el Colegio ANAVI era manual y consumía mucho tiempo. El inspector visitaba cada curso, anotaba manualmente en papel los estudiantes presentes, ausentes y atrasados, y posteriormente transfería esta información a una hoja de cálculo Excel. Este proceso ocupaba la mayor parte del día del inspector, lo que resultaba en una ineficiencia significativa en la gestión del tiempo y los recursos.",
-      "technology": "Plataforma de Desarrollo: Flutterflow, Base de Datos: Firebase, Integración: API de Idukay, Funcionalidades Adicionales: Dependencias de terceros para características específicas",
-      "features": [
-        "Creación de Asistencia Diaria por Curso: Interfaz intuitiva para iniciar el registro de asistencia para cada clase.",
-        "Marcación Rápida de Estados: Opciones para marcar estudiantes como presentes, ausentes o atrasados.",
-        "Escaneo de Código QR: Funcionalidad innovadora para marcar la asistencia mediante el escaneo del código QR único de cada estudiante.",
-        "Consulta de Registros Históricos: Acceso a registros de asistencia de fechas anteriores.",
-        "Generación de Reportes: Capacidad de descargar informes de asistencia en formato Excel.",
-        "Estadísticas de Asistencia: Visualización de datos estadísticos sobre la asistencia de los estudiantes.",
-        "Notas y Observaciones: Opción para agregar notas adicionales a los registros de asistencia de los estudiantes."
-      ],
-      "development": "El proyecto se llevó a cabo mediante un proceso de desarrollo iterativo, permitiendo ajustes y mejoras continuas basadas en el feedback del cliente y las necesidades emergentes durante la implementación. El principal desafío técnico fue la implementación de la funcionalidad de escaneo de códigos QR, que requirió un enfoque innovador y una investigación exhaustiva para su desarrollo exitoso.",
-      "results": "Eficiencia Mejorada: Reducción significativa en el tiempo necesario para completar el proceso de toma de asistencia. Acceso Inmediato a la Información: Consulta en tiempo real de los registros de asistencia. Flexibilidad en la Generación de Informes: Opción de descargar reportes en Excel. Precisión Mejorada: Reducción de errores asociados con la entrada manual de datos.",
-      "lessons": "Un aprendizaje crucial de este proyecto fue la importancia de la gestión del cambio en la implementación de nuevas tecnologías. Se observó una resistencia inicial al cambio por parte de algunos usuarios, lo que subraya la necesidad de una estrategia de implementación gradual, capacitación exhaustiva, comunicación clara de los beneficios y flexibilidad en el diseño para acomodar preferencias de usuario. La experiencia demuestra que el éxito del proyecto depende en gran medida de la aceptación y adaptación de los usuarios finales.",
-      "images": [
-        "https://via.placeholder.com/200",
-        "https://via.placeholder.com/200",
-        "https://via.placeholder.com/200",
-        "https://via.placeholder.com/200"
-      ]
-    },
+  //ATTENDANCE APP
+  1: {
+    "title": "Attendance APP",
+    "subtitle": "Aplicación móvil para optimizar la toma de asistencia diaria",
+    "date": "Fecha de inicio: [Fecha no especificada]",
+    "status": "Estado: [No especificado]",
+    "client": "Colegio ANAVI",
+    "description": "Attendance APP es una aplicación móvil diseñada para optimizar y agilizar el proceso de toma de asistencia diaria en el Colegio ANAVI. El proyecto se centró en la creación de una herramienta eficiente que permitiera a los inspectores gestionar la asistencia de los estudiantes de manera rápida y efectiva, además de proporcionar funcionalidades para consultar registros anteriores y generar informes.",
+    "context": "Antes de la implementación de Attendance APP, el proceso de toma de asistencia en el Colegio ANAVI era manual y consumía mucho tiempo. El inspector visitaba cada curso, anotaba manualmente en papel los estudiantes presentes, ausentes y atrasados, y posteriormente transfería esta información a una hoja de cálculo Excel. Este proceso ocupaba la mayor parte del día del inspector, lo que resultaba en una ineficiencia significativa en la gestión del tiempo y los recursos.",
+    "technology": "Plataforma de Desarrollo: Flutterflow, Base de Datos: Firebase, Integración: API de Idukay, Funcionalidades Adicionales: Dependencias de terceros para características específicas",
+    "features": [
+      "Creación de Asistencia Diaria por Curso: Interfaz intuitiva para iniciar el registro de asistencia para cada clase.",
+      "Marcación Rápida de Estados: Opciones para marcar estudiantes como presentes, ausentes o atrasados.",
+      "Escaneo de Código QR: Funcionalidad innovadora para marcar la asistencia mediante el escaneo del código QR único de cada estudiante.",
+      "Consulta de Registros Históricos: Acceso a registros de asistencia de fechas anteriores.",
+      "Generación de Reportes: Capacidad de descargar informes de asistencia en formato Excel.",
+      "Estadísticas de Asistencia: Visualización de datos estadísticos sobre la asistencia de los estudiantes.",
+      "Notas y Observaciones: Opción para agregar notas adicionales a los registros de asistencia de los estudiantes."
+    ],
+    "development": "El proyecto se llevó a cabo mediante un proceso de desarrollo iterativo, permitiendo ajustes y mejoras continuas basadas en el feedback del cliente y las necesidades emergentes durante la implementación. El principal desafío técnico fue la implementación de la funcionalidad de escaneo de códigos QR, que requirió un enfoque innovador y una investigación exhaustiva para su desarrollo exitoso.",
+    "results": "Eficiencia Mejorada: Reducción significativa en el tiempo necesario para completar el proceso de toma de asistencia. Acceso Inmediato a la Información: Consulta en tiempo real de los registros de asistencia. Flexibilidad en la Generación de Informes: Opción de descargar reportes en Excel. Precisión Mejorada: Reducción de errores asociados con la entrada manual de datos.",
+    "lessons": "Un aprendizaje crucial de este proyecto fue la importancia de la gestión del cambio en la implementación de nuevas tecnologías. Se observó una resistencia inicial al cambio por parte de algunos usuarios, lo que subraya la necesidad de una estrategia de implementación gradual, capacitación exhaustiva, comunicación clara de los beneficios y flexibilidad en el diseño para acomodar preferencias de usuario. La experiencia demuestra que el éxito del proyecto depende en gran medida de la aceptación y adaptación de los usuarios finales.",
+    "images": [
+      "https://via.placeholder.com/200",
+      "https://via.placeholder.com/200",
+      "https://via.placeholder.com/200",
+      "https://via.placeholder.com/200"
+    ]
+  },
 
   //ANAVI CRM
   2: {
@@ -57,7 +57,7 @@ const projects = {
   },
 
   //ASISTENTE ANVYS
-  3:{
+  3: {
     "title": "Asistente ANVYS",
     "subtitle": "Asistente virtual de IA para información de admisiones",
     "date": "Fecha de inicio: [Fecha no especificada]",
@@ -82,9 +82,9 @@ const projects = {
       "https://via.placeholder.com/200"
     ]
   },
-  
+
   //ALEXA SKILL
-  4:{
+  4: {
     "title": "Alexa Skill para Consulta de Información Estudiantil",
     "subtitle": "Acceso por voz a datos de estudiantes mediante Alexa e IA",
     "date": "Fecha de inicio: [Fecha no especificada]",
@@ -109,37 +109,37 @@ const projects = {
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200"
     ]
-  }, 
+  },
 
-    //WEB HBL
-    5:{
-      "title": "E-commerce para HBL Babygoods",
-      "subtitle": "Plataforma de comercio electrónico escalable para productos de bebé",
-      "date": "Fecha de inicio: [Fecha no especificada]",
-      "status": "Estado: [No especificado]",
-      "client": "HBL Babygoods",
-      "description": "Este proyecto consistió en el desarrollo de una plataforma de comercio electrónico completa y escalable para HBL Babygoods, una empresa especializada en productos para bebés. La solución implementada ofrece un catálogo detallado de productos con variantes, funcionalidades avanzadas como compras al por mayor, cálculo dinámico de costos de envío y múltiples opciones de pago en línea.",
-      "context": "HBL Babygoods operaba previamente con una plataforma de comercio electrónico que limitaba su capacidad de crecimiento y expansión. El cliente necesitaba una solución más robusta y flexible que pudiera adaptarse a sus necesidades específicas, como la venta al por mayor y la gestión eficiente de productos con múltiples variantes.",
-      "technology": "Plataforma Principal: WordPress, Sistema de E-commerce: WooCommerce, Extensibilidad: Plugins personalizados y de terceros, Integración: APIs de terceros para funcionalidades específicas, Pasarelas de Pago: PayPhone y PayPal",
-      "features": [
-        "Catálogo de Productos Avanzado: Sistema de productos con variantes e importación eficiente mediante API de WooCommerce.",
-        "Funcionalidad de Compra al por Mayor: Capacidad para realizar pedidos al por mayor con precios y cantidades mínimas específicas.",
-        "Cálculo Dinámico de Costos de Envío: Sistema de cálculo de costos de envío basado en la dirección del cliente.",
-        "Múltiples Opciones de Pago: Integración de pasarelas de pago PayPhone y PayPal.",
-        "Gestión Avanzada de Inventario: Sistema robusto para la gestión de stock, incluyendo seguimiento de entradas y salidas."
-      ],
-      "development": "El proyecto se llevó a cabo mediante un proceso de desarrollo iterativo. Los principales desafíos incluyeron la importación eficiente de productos con múltiples variantes, la integración de múltiples sistemas, y la implementación de lógica de negocio compleja para manejar ventas al por menor y al por mayor. Se implementaron soluciones innovadoras como un sistema de cálculo de envíos personalizado y una gestión de inventario multicanal.",
-      "results": "La nueva plataforma mejoró la escalabilidad del negocio, aumentó la eficiencia operativa, mejoró la experiencia del cliente, permitió la expansión de la base de clientes incluyendo ventas al por mayor, y contribuyó a un incremento en las ventas en línea.",
-      "lessons": "El proyecto demostró la importancia de la flexibilidad en la elección de la plataforma, el valor de la integración efectiva de múltiples sistemas, la crucial importancia del enfoque en la experiencia del usuario, y el potencial de crecimiento que una plataforma robusta puede proporcionar. Este desarrollo no solo cumplió con los objetivos iniciales, sino que también sentó las bases para el crecimiento futuro y la innovación continua en el negocio de HBL Babygoods.",
-      "images": [
-        "https://via.placeholder.com/200",
-        "https://via.placeholder.com/200",
-        "https://via.placeholder.com/200",
-        "https://via.placeholder.com/200"
-      ]
-    },
+  //WEB HBL
+  5: {
+    "title": "E-commerce para HBL Babygoods",
+    "subtitle": "Plataforma de comercio electrónico escalable para productos de bebé",
+    "date": "Fecha de inicio: [Fecha no especificada]",
+    "status": "Estado: [No especificado]",
+    "client": "HBL Babygoods",
+    "description": "Este proyecto consistió en el desarrollo de una plataforma de comercio electrónico completa y escalable para HBL Babygoods, una empresa especializada en productos para bebés. La solución implementada ofrece un catálogo detallado de productos con variantes, funcionalidades avanzadas como compras al por mayor, cálculo dinámico de costos de envío y múltiples opciones de pago en línea.",
+    "context": "HBL Babygoods operaba previamente con una plataforma de comercio electrónico que limitaba su capacidad de crecimiento y expansión. El cliente necesitaba una solución más robusta y flexible que pudiera adaptarse a sus necesidades específicas, como la venta al por mayor y la gestión eficiente de productos con múltiples variantes.",
+    "technology": "Plataforma Principal: WordPress, Sistema de E-commerce: WooCommerce, Extensibilidad: Plugins personalizados y de terceros, Integración: APIs de terceros para funcionalidades específicas, Pasarelas de Pago: PayPhone y PayPal",
+    "features": [
+      "Catálogo de Productos Avanzado: Sistema de productos con variantes e importación eficiente mediante API de WooCommerce.",
+      "Funcionalidad de Compra al por Mayor: Capacidad para realizar pedidos al por mayor con precios y cantidades mínimas específicas.",
+      "Cálculo Dinámico de Costos de Envío: Sistema de cálculo de costos de envío basado en la dirección del cliente.",
+      "Múltiples Opciones de Pago: Integración de pasarelas de pago PayPhone y PayPal.",
+      "Gestión Avanzada de Inventario: Sistema robusto para la gestión de stock, incluyendo seguimiento de entradas y salidas."
+    ],
+    "development": "El proyecto se llevó a cabo mediante un proceso de desarrollo iterativo. Los principales desafíos incluyeron la importación eficiente de productos con múltiples variantes, la integración de múltiples sistemas, y la implementación de lógica de negocio compleja para manejar ventas al por menor y al por mayor. Se implementaron soluciones innovadoras como un sistema de cálculo de envíos personalizado y una gestión de inventario multicanal.",
+    "results": "La nueva plataforma mejoró la escalabilidad del negocio, aumentó la eficiencia operativa, mejoró la experiencia del cliente, permitió la expansión de la base de clientes incluyendo ventas al por mayor, y contribuyó a un incremento en las ventas en línea.",
+    "lessons": "El proyecto demostró la importancia de la flexibilidad en la elección de la plataforma, el valor de la integración efectiva de múltiples sistemas, la crucial importancia del enfoque en la experiencia del usuario, y el potencial de crecimiento que una plataforma robusta puede proporcionar. Este desarrollo no solo cumplió con los objetivos iniciales, sino que también sentó las bases para el crecimiento futuro y la innovación continua en el negocio de HBL Babygoods.",
+    "images": [
+      "https://via.placeholder.com/200",
+      "https://via.placeholder.com/200",
+      "https://via.placeholder.com/200",
+      "https://via.placeholder.com/200"
+    ]
+  },
   //WEB ANAVI
-  6:{
+  6: {
     "title": "Sitio Web Colegio ANAVI",
     "subtitle": "Desarrollo rápido de presencia web para aumentar visibilidad y admisiones",
     "date": "Fecha de inicio: [Fecha no especificada]",
@@ -169,7 +169,7 @@ const projects = {
   },
 
   //ESTUDYZONE
-  7:{
+  7: {
     title: 'Proyecto 7',
     subtitle: 'Descripción breve del proyecto 7',
     date: 'Fecha de inicio: [Fecha no especificada]',
@@ -179,23 +179,23 @@ const projects = {
     context: 'Contexto del proyecto 7.',
     technology: 'Tecnologías utilizadas en el proyecto 7.',
     features: [
-        'Característica 1 del proyecto 7',
-        'Característica 2 del proyecto 7',
-        'Característica 3 del proyecto 7'
+      'Característica 1 del proyecto 7',
+      'Característica 2 del proyecto 7',
+      'Característica 3 del proyecto 7'
     ],
     development: 'Proceso de desarrollo del proyecto 7.',
     results: 'Resultados del proyecto 7.',
     lessons: 'Lecciones aprendidas del proyecto 7.',
     images: [
-        'https://via.placeholder.com/200',
-        'https://via.placeholder.com/200',
-        'https://via.placeholder.com/200',
-        'https://via.placeholder.com/200'
+      'https://via.placeholder.com/200',
+      'https://via.placeholder.com/200',
+      'https://via.placeholder.com/200',
+      'https://via.placeholder.com/200'
     ]
-},
+  },
 
   //INVOICE APP
-  8:{
+  8: {
     "title": "Invoice App",
     "subtitle": "Aplicación de gestión de cotizaciones para Atelier Maria",
     "date": "Fecha de inicio: [Fecha no especificada]",
@@ -239,7 +239,7 @@ let currentProjectId = null;
 function openModal(projectId) {
   currentProjectId = projectId;
   const projectData = projects[projectId];
-  
+
   modalContent.querySelector('#project-title').innerHTML = projectData.title;
   modalContent.querySelector('#project-subtitle').innerHTML = projectData.subtitle;
   modalContent.querySelector('#project-date').innerHTML = projectData.date;
@@ -248,32 +248,32 @@ function openModal(projectId) {
   modalContent.querySelector('#project-description').innerHTML = projectData.description;
   modalContent.querySelector('#project-context').innerHTML = projectData.context;
   modalContent.querySelector('#project-technology').innerHTML = projectData.technology;
-  
+
   const featuresList = modalContent.querySelector('#project-features');
   featuresList.innerHTML = '';
   projectData.features.forEach(feature => {
-      const li = document.createElement('li');
-      li.innerHTML = feature;
-      featuresList.appendChild(li);
+    const li = document.createElement('li');
+    li.innerHTML = feature;
+    featuresList.appendChild(li);
   });
-  
+
   modalContent.querySelector('#project-development').innerHTML = projectData.development;
   modalContent.querySelector('#project-results').innerHTML = projectData.results;
   modalContent.querySelector('#project-lessons').innerHTML = projectData.lessons;
-  
+
   const gallery = modalContent.querySelector('#project-gallery');
   gallery.innerHTML = '';
   projectData.images.forEach((image, index) => {
-      const img = document.createElement('img');
-      img.src = image;
-      img.alt = `Imagen ${index + 1} del proyecto ${projectData.title}`;
-      img.loading = 'lazy';
-      img.addEventListener('click', () => openImageModal(image, img.alt));
-      gallery.appendChild(img);
+    const img = document.createElement('img');
+    img.src = image;
+    img.alt = `Imagen ${index + 1} del proyecto ${projectData.title}`;
+    img.loading = 'lazy';
+    img.addEventListener('click', () => openImageModal(image, img.alt));
+    gallery.appendChild(img);
   });
-  
+
   modal.style.display = 'block';
-    
+
   setTimeout(() => {
     modal.classList.add('show');
   }, 10);
@@ -285,7 +285,7 @@ function openModal(projectId) {
 function closeModal() {
   modal.classList.remove('show');
   setTimeout(() => {
-      modal.style.display = 'none';
+    modal.style.display = 'none';
   }, 300);
 }
 
@@ -293,10 +293,10 @@ function navigateProject(direction) {
   const projectIds = Object.keys(projects);
   const currentIndex = projectIds.indexOf(currentProjectId.toString());
   let newIndex = currentIndex + direction;
-  
+
   if (newIndex < 0) newIndex = projectIds.length - 1;
   if (newIndex >= projectIds.length) newIndex = 0;
-  
+
   openModal(projectIds[newIndex]);
 
   scrollModalToTop();
@@ -305,9 +305,9 @@ function navigateProject(direction) {
 function updateNavigationButtons() {
   const projectIds = Object.keys(projects);
   const currentIndex = projectIds.indexOf(currentProjectId.toString());
-  
-/*   prevButton.disabled = currentIndex === 0;
-  nextButton.disabled = currentIndex === projectIds.length - 1; */
+
+  /*   prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === projectIds.length - 1; */
 }
 
 function scrollModalToTop() {
@@ -321,15 +321,15 @@ function openImageModal(imageSrc, imageAlt) {
   /* imageModal.style.display = 'block'; */
   imageModal.classList.add('image-styles')
   setTimeout(() => {
-      imageModal.classList.add('show');
+    imageModal.classList.add('show');
   }, 10);
 }
 
 function closeImageModal() {
   imageModal.classList.remove('show');
   setTimeout(() => {
-      /* imageModal.style.display = 'none'; */
-      imageModal.classList.remove('image-styles')
+    /* imageModal.style.display = 'none'; */
+    imageModal.classList.remove('image-styles')
   }, 300);
 }
 
@@ -339,15 +339,15 @@ imageModal.querySelector('.close-button').addEventListener('click', closeImageMo
 // Añade este evento para cerrar el modal de imagen al hacer clic fuera de la imagen
 imageModal.addEventListener('click', (event) => {
   if (event.target === imageModal) {
-      closeImageModal();
+    closeImageModal();
   }
 });
 
 // Event Listeners
 document.querySelectorAll('.project').forEach(projectElement => {
   projectElement.addEventListener('click', () => {
-      const projectId = projectElement.getAttribute('data-id');
-      openModal(projectId);
+    const projectId = projectElement.getAttribute('data-id');
+    openModal(projectId);
   });
 });
 
@@ -357,23 +357,23 @@ nextButton.addEventListener('click', () => navigateProject(1));
 
 window.addEventListener('click', (event) => {
   if (event.target === modal) {
-      closeModal();
+    closeModal();
   }
   if (event.target === imageModal) {
-      closeImageModal();
+    closeImageModal();
   }
 });
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
   if (modal.style.display === 'block' || imageModal.style.display === 'block') {
-      if (e.key === 'Escape') {
-          closeModal();
-          closeImageModal();
-      }
-      if (modal.style.display === 'block') {
-          if (e.key === 'ArrowLeft') navigateProject(-1);
-          if (e.key === 'ArrowRight') navigateProject(1);
-      }
+    if (e.key === 'Escape') {
+      closeModal();
+      closeImageModal();
+    }
+    if (modal.style.display === 'block') {
+      if (e.key === 'ArrowLeft') navigateProject(-1);
+      if (e.key === 'ArrowRight') navigateProject(1);
+    }
   }
 });
