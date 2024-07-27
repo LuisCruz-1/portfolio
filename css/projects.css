@@ -293,20 +293,30 @@ color: #ffffff;
   transition: transform 0.3s ease;
   color: white;
   background-image: url(../images/gradient.svg);
-    background-repeat: no-repeat;
-    background-position-x: center;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-color: rgba(0, 0, 0, 0.6)!important;
+  background-blend-mode: unset!important;
 }
 
 .modal-content h2{
   font-size: 2rem;
-  line-height: 3.5rem;
+  line-height: 2.5rem;
 }
 
 .modal-content h4{
   font-size: 1.25rem;
-    line-height: 1.75rem;
-    margin-top: 2rem;
-    margin-bottom: .55rem;
+  line-height: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: .55rem;
+}
+
+.modal-content h3{
+  font-weight: 300;
+  color: rgb(160 160 160/1);
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .modal-content p{
