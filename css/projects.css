@@ -188,9 +188,8 @@ main {
 }
 
 .project .content span {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-
-  display: flex; 
+background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+display: flex; 
 position: absolute; 
 bottom: 0.5rem; 
 z-index: 10; 
@@ -293,6 +292,9 @@ color: #ffffff;
   transform: translateY(-50px);
   transition: transform 0.3s ease;
   color: white;
+  background-image: url(../images/gradient.svg);
+    background-repeat: no-repeat;
+    background-position-x: center;
 }
 
 .modal-content h2{
@@ -317,10 +319,11 @@ color: #ffffff;
 
 .modal-content ul{
   color: rgb(160 160 160/1);
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
   font-size: 1rem;
   line-height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .modal.show .modal-content {
@@ -343,14 +346,17 @@ color: #ffffff;
 
 .gallery {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
   margin: 20px 0;
+
+  flex-wrap: nowrap;
 }
 
 .gallery img {
-  width: calc(25% - 7.5px);
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
   height: 150px;
   object-fit: cover;
   cursor: pointer;
