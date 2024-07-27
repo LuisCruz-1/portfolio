@@ -564,7 +564,7 @@ h2 {
 
 /* Projects*/
 .project-link {
-  padding: 0.25rem;
+  padding: 0.35rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   display: flex;
@@ -633,6 +633,7 @@ h2 {
 .images {
   width: 300px;
   height: 150px;
+  position: absolute;
 }
 
 .images .image-wrapper:last-child:hover {

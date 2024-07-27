@@ -24,7 +24,6 @@ const projects = {
     "images": [
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
-      "https://via.placeholder.com/200",
       "https://via.placeholder.com/200"
     ]
   },
@@ -51,7 +50,6 @@ const projects = {
     "images": [
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
-      "https://via.placeholder.com/200",
       "https://via.placeholder.com/200"
     ]
   },
@@ -76,7 +74,6 @@ const projects = {
     "results": "Innovación en la atención al proporcionar un nuevo canal de información y asistencia. Automatización de tareas específicas. Exploración práctica de las posibilidades de la IA en el entorno educativo. Ofrecimiento de interacción multimodal mejorando la accesibilidad.",
     "lessons": "El proyecto proporcionó valiosas lecciones sobre el potencial y las limitaciones actuales de la IA en entornos empresariales. Se evidenció la importancia de la supervisión humana y los desafíos de depender de múltiples APIs externas. A pesar de las limitaciones, se demostró el potencial significativo de la IA en la automatización y mejora de procesos educativos.",
     "images": [
-      "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200"
@@ -106,7 +103,6 @@ const projects = {
     "images": [
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
-      "https://via.placeholder.com/200",
       "https://via.placeholder.com/200"
     ]
   },
@@ -132,7 +128,6 @@ const projects = {
     "results": "La nueva plataforma mejoró la escalabilidad del negocio, aumentó la eficiencia operativa, mejoró la experiencia del cliente, permitió la expansión de la base de clientes incluyendo ventas al por mayor, y contribuyó a un incremento en las ventas en línea.",
     "lessons": "El proyecto demostró la importancia de la flexibilidad en la elección de la plataforma, el valor de la integración efectiva de múltiples sistemas, la crucial importancia del enfoque en la experiencia del usuario, y el potencial de crecimiento que una plataforma robusta puede proporcionar. Este desarrollo no solo cumplió con los objetivos iniciales, sino que también sentó las bases para el crecimiento futuro y la innovación continua en el negocio de HBL Babygoods.",
     "images": [
-      "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200"
@@ -163,7 +158,6 @@ const projects = {
     "images": [
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
-      "https://via.placeholder.com/200",
       "https://via.placeholder.com/200"
     ]
   },
@@ -187,7 +181,6 @@ const projects = {
     results: 'Resultados del proyecto 7.',
     lessons: 'Lecciones aprendidas del proyecto 7.',
     images: [
-      'https://via.placeholder.com/200',
       'https://via.placeholder.com/200',
       'https://via.placeholder.com/200',
       'https://via.placeholder.com/200'
@@ -215,7 +208,6 @@ const projects = {
     "results": "Eficiencia Mejorada: Reducción significativa en el tiempo para crear y enviar cotizaciones. Organización Optimizada: Facilidad para encontrar y consultar cotizaciones anteriores. Profesionalismo Aumentado: Cotizaciones con diseño consistente y profesional.<br><br>Longevidad de la Solución: La aplicación sigue en uso activo después de 4 años. Automatización de Procesos: Eliminación de pasos manuales en la creación de PDFs y envío de correos electrónicos.",
     "lessons": "El desarrollo y éxito continuo de Invoice App ha demostrado la importancia de la usabilidad, el valor de la automatización, la necesidad de un diseño centrado en el usuario, la importancia de la escalabilidad y mantenimiento, y el impacto significativo en la productividad que puede tener la transformación digital de procesos manuales. La continua utilización de la aplicación después de varios años es un testimonio del éxito del proyecto y de la importancia de crear soluciones que realmente se adapten a las necesidades del usuario final.",
     "images": [
-      "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200",
       "https://via.placeholder.com/200"
