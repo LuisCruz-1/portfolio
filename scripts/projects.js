@@ -265,17 +265,18 @@ function openModal(projectId) {
   });
 
   modal.style.display = 'block';
-
+  document.body.style.overflow='hidden';
   setTimeout(() => {
     modal.classList.add('show');
   }, 10);
 
-
+  scrollModalToTop();
   updateNavigationButtons();
 }
 
 function closeModal() {
   modal.classList.remove('show');
+  document.body.style.overflow='auto';
   setTimeout(() => {
     modal.style.display = 'none';
   }, 300);
