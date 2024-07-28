@@ -564,9 +564,9 @@ h2 {
 
 /* Projects*/
 .project-link {
-  padding: 0.35rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding: 0.45rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -598,11 +598,11 @@ h2 {
   height: 100%;
 }
 
-.relative-container:hover .images {
+.relative-container .images {
   filter: blur(4px);
 }
 
-.relative-container:hover .project-link {
+.relative-container .project-link {
   transform: translateY(-50%) scale(1);
   opacity: 1;
 }
