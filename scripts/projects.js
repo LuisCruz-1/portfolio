@@ -6,9 +6,6 @@ const closeModalButton = modal.querySelector('.close-button');
 const prevButton = document.getElementById('prev-project');
 const nextButton = document.getElementById('next-project');
 
-const imageModal = document.getElementById('image-modal');
-const modalImage = document.getElementById('modal-image');
-const imageCaption = document.getElementById('image-caption');
 const projectsContainer = document.getElementById('projects-container');
 
 let currentProjectId = null;
@@ -22,10 +19,10 @@ function renderProjects() {
     const projectHTML = `
       <div class="project box-gen shadow" data-id="${id}">
         <div class="content">
-          <img src="${project.images[0]}" alt="${project.title}" loading="lazy">
+          <img src="${project.image}" alt="${project.title}" loading="lazy">
           <span>
             <p>${project.title}</p>
-            <p>${project.date.replace('Fecha de inicio: ', '')}</p>
+            <p>${project.date}</p>
           </span>
         </div>
         <a class="link" target="_blank">Detalles del Proyecto
@@ -57,37 +54,24 @@ function openModal(projectId) {
   currentProjectId = projectId;
   const projectData = projectsData[projectId];
 
-  modalContent.querySelector('#project-title').innerHTML = projectData.title;
-  modalContent.querySelector('#project-subtitle').innerHTML = projectData.subtitle;
-  modalContent.querySelector('#project-date').innerHTML = projectData.date;
-  modalContent.querySelector('#project-status').innerHTML = projectData.status;
-  modalContent.querySelector('#project-client').innerHTML = projectData.client;
-  modalContent.querySelector('#project-description').innerHTML = projectData.description;
-  modalContent.querySelector('#project-context').innerHTML = projectData.context;
-  modalContent.querySelector('#project-technology').innerHTML = projectData.technology;
+  modalContent.querySelector('#project-title').textContent = projectData.title;
+  modalContent.querySelector('#project-subtitle').textContent = projectData.subtitle;
+  modalContent.querySelector('#project-date').textContent = projectData.date;
+  modalContent.querySelector('#project-description').textContent = projectData.description;
+  
+  const coverImage = modalContent.querySelector('#project-cover');
+  coverImage.src = projectData.image;
+  coverImage.alt = `Portada de ${projectData.title}`;
 
-  const featuresList = modalContent.querySelector('#project-features');
-  featuresList.innerHTML = '';
-  projectData.features.forEach(feature => {
-    const li = document.createElement('li');
-    li.innerHTML = feature;
-    featuresList.appendChild(li);
-  });
-
-  modalContent.querySelector('#project-development').innerHTML = projectData.development;
-  modalContent.querySelector('#project-results').innerHTML = projectData.results;
-  modalContent.querySelector('#project-lessons').innerHTML = projectData.lessons;
-
-  const gallery = modalContent.querySelector('#project-gallery');
-  gallery.innerHTML = '';
-  projectData.images.forEach((image, index) => {
-    const img = document.createElement('img');
-    img.src = image;
-    img.alt = `Imagen ${index + 1} del proyecto ${projectData.title}`;
-    img.loading = 'lazy';
-    img.addEventListener('click', () => openImageModal(image, img.alt));
-    gallery.appendChild(img);
-  });
+  const linkContainer = modalContent.querySelector('#project-link-container');
+  const projectLink = modalContent.querySelector('#project-link');
+  
+  if (projectData.link && projectData.link.trim() !== '') {
+    linkContainer.style.display = 'block';
+    projectLink.href = projectData.link;
+  } else {
+    linkContainer.style.display = 'none';
+  }
 
   modal.style.display = 'block';
   document.body.style.overflow='hidden';
@@ -133,34 +117,6 @@ function scrollModalToTop() {
   modalContent.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function openImageModal(imageSrc, imageAlt) {
-  modalImage.src = imageSrc;
-  imageCaption.textContent = imageAlt;
-  /* imageModal.style.display = 'block'; */
-  imageModal.classList.add('image-styles')
-  setTimeout(() => {
-    imageModal.classList.add('show');
-  }, 10);
-}
-
-function closeImageModal() {
-  imageModal.classList.remove('show');
-  setTimeout(() => {
-    /* imageModal.style.display = 'none'; */
-    imageModal.classList.remove('image-styles')
-  }, 300);
-}
-
-// Asegúrate de que este evento esté correctamente asignado
-imageModal.querySelector('.close-button').addEventListener('click', closeImageModal);
-
-// Añade este evento para cerrar el modal de imagen al hacer clic fuera de la imagen
-imageModal.addEventListener('click', (event) => {
-  if (event.target === imageModal) {
-    closeImageModal();
-  }
-});
-
 // Event Listeners
 
 closeModalButton.addEventListener('click', closeModal);
@@ -171,21 +127,15 @@ window.addEventListener('click', (event) => {
   if (event.target === modal) {
     closeModal();
   }
-  if (event.target === imageModal) {
-    closeImageModal();
-  }
 });
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
-  if (modal.style.display === 'block' || imageModal.style.display === 'block') {
+  if (modal.style.display === 'block') {
     if (e.key === 'Escape') {
       closeModal();
-      closeImageModal();
     }
-    if (modal.style.display === 'block') {
-      if (e.key === 'ArrowLeft') navigateProject(-1);
-      if (e.key === 'ArrowRight') navigateProject(1);
-    }
+    if (e.key === 'ArrowLeft') navigateProject(-1);
+    if (e.key === 'ArrowRight') navigateProject(1);
   }
 });

@@ -29,43 +29,33 @@
 
     <!-- Modal de proyecto -->
     <div id="project-modal" class="modal" role="dialog" aria-labelledby="project-title">
-      <div class="modal-content box-gen shadow">
+      <div class="modal-content">
           <span class="close-button" aria-label="Cerrar">&times;</span>
           <h2 id="project-title"></h2>
-          <h3 id="project-subtitle"></h3>
-          <div class="gallery" id="project-gallery">
-              <!-- Las imágenes se agregarán dinámicamente -->
+          <h3 id="project-subtitle" style="font-weight: 300; font-size: 1rem; color: #a0a0a0; margin-bottom: 0.25rem;"></h3>
+          <p id="project-date" style="font-weight: 200; font-size: 0.9rem; color: #888; margin-bottom: 1.5rem;"></p>
+          
+          <div class="project-cover-container">
+            <img id="project-cover" src="" alt="Portada del proyecto" loading="lazy" />
           </div>
-          <p id="project-date"></p>
-          <p id="project-status"></p>
-          <h4>Cliente</h4>
-          <p id="project-client"></p>
-          <h4>Descripción General</h4>
-          <p id="project-description"></p>
-          <h4>Contexto</h4>
-          <p id="project-context"></p>
-          <h4>Enfoque Tecnológico</h4>
-          <p id="project-technology"></p>
-          <h4>Características Clave</h4>
-          <ul id="project-features"></ul>
-          <h4>Proceso de Desarrollo</h4>
-          <p id="project-development"></p>
-          <h4>Resultados e Impacto</h4>
-          <p id="project-results"></p>
-          <h4>Lecciones Aprendidas y Futuro del Proyecto</h4>
-          <p id="project-lessons"></p>
-          <div class="modal-navigation">
-              <button id="prev-project" aria-label="Proyecto anterior" class="link">&lt; Anterior</button>
-              <button id="next-project" aria-label="Proyecto siguiente" class="link">Siguiente &gt;</button>
+          
+          <p id="project-description" style="margin-top: 1.5rem; font-size: 1.05rem; line-height: 1.6; color: #d4d4d8;"></p>
+          
+          <div id="project-link-container" style="margin-top: 2rem; display: none;">
+            <a id="project-link" href="#" target="_blank" rel="noopener noreferrer" class="link" style="width: fit-content; padding: 0.75rem 1.5rem; border-radius: 2rem;">
+              Ver Proyecto
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-left: 5px;">
+                <path fill-rule="evenodd" d="M8.636 2.864a.5.5 0 0 1 .5-.5h5.793a.5.5 0 0 1 .5.5v5.793a.5.5 0 0 1-1 0V4.207L5.854 12.78a.5.5 0 1 1-.708-.708L13.719 3.5H9.136a.5.5 0 0 1-.5-.5z"/>
+                <path fill-rule="evenodd" d="M2.5 14A1.5 1.5 0 0 1 1 12.5V3A1.5 1.5 0 0 1 2.5 1.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 0-.5.5v9.5a.5.5 0 0 0 .5.5h9.5a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 1 0v4A1.5 1.5 0 0 1 12.5 14h-10z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="modal-navigation" style="margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+              <button id="prev-project" aria-label="Proyecto anterior" class="link" style="width: auto;">Anterior</button>
+              <button id="next-project" aria-label="Proyecto siguiente" class="link" style="width: auto;">Siguiente</button>
           </div>
       </div>
-  </div>
-
-  <!-- Modal de imagen -->
-  <div id="image-modal" class="modal">
-      <span class="close-button" aria-label="Cerrar">&times;</span>
-      <img class="modal-image-content" id="modal-image">
-      <div id="image-caption"></div>
   </div>
 
   <script src="./scripts/data.js"></script>
