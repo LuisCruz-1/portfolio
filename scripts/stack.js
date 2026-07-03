@@ -37,12 +37,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // Renderizar Modal Grid dinámicamente
   if (modalGrid && typeof stackData !== 'undefined') {
     stackData.forEach(tech => {
+      let innerHTML = '';
+      let classes = 'stack-icon';
+      
+      if (tech.isWide) {
+        classes += ' flutterflow-icon';
+        innerHTML = `<img src="${tech.icon}" alt="${tech.name}" style="width: 24px; height: 24px;" /><span>${tech.name}</span>`;
+      } else {
+        innerHTML = `<img src="${tech.icon}" alt="${tech.name}" loading="lazy" />`;
+      }
+
       const div = document.createElement('div');
-      div.className = 'stack-modal-item box-gen';
+      div.className = classes;
       div.title = tech.name;
-      div.innerHTML = `
-        <img src="${tech.icon}" alt="${tech.name}" loading="lazy" />
-      `;
+      div.innerHTML = innerHTML;
+      
+      if (tech.isWide) {
+        div.style.gridColumn = "span 2";
+      }
+
       modalGrid.appendChild(div);
     });
   }

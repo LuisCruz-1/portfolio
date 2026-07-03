@@ -439,9 +439,9 @@ h2 {
   background-position: 0 40px; /* Alineado verticalmente con el padding-top */
 }
 
-.stack-track:hover {
+/*.stack-track:hover {
   animation-play-state: paused;
-}
+}*/
 
 .stack-grid {
   display: grid;
@@ -504,44 +504,38 @@ h2 {
 }
 
 /* Modal Stack Grid */
+.stack-modal-grid-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%);
+}
+
 .stack-modal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem 0;
-  overflow-y: auto;
+  grid-template-columns: repeat(5, 64px);
+  grid-auto-rows: 64px;
+  gap: 11px;
+  padding: 40px;
+  height: max-content;
+  
+  /* Dibujar el grid de fondo idéntico al principal */
+  background-image:
+    linear-gradient(to right, #E9E9EB 1px, transparent 1px, transparent 63px, #E9E9EB 63px, #E9E9EB 64px, transparent 64px),
+    linear-gradient(to bottom, #E9E9EB 1px, transparent 1px, transparent 63px, #E9E9EB 63px, #E9E9EB 64px, transparent 64px);
+  background-size: 75px 75px;
+  background-position: 40px 40px; /* Alineado con el padding */
 }
 
-.stack-modal-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 2rem 1rem;
-  border-radius: 1rem;
-  transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.03);
-  cursor: default;
-}
-
-.stack-modal-item:hover {
-  transform: translateY(-5px);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.stack-modal-item img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.stack-modal-item .stack-name {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-main);
-  text-align: center;
+/* Reducimos columnas en móviles */
+@media (max-width: 600px) {
+  .stack-modal-grid {
+    grid-template-columns: repeat(3, 64px);
+  }
 }
 
 /* Projects*/
@@ -563,8 +557,9 @@ h2 {
   position: absolute;
   top: 50%;
   z-index: 40;
-  transform: translateY(-50%) scale(0.75);
-  opacity: 0;
+  transform: translateY(-50%) scale(1.05);
+  /*transform: translateY(-50%) scale(0.75);
+  opacity: 0;*/
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
