@@ -33,6 +33,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      
+      - name: Cache Busting (Add version to assets)
+        run: |
+          VERSION=$(date +%s)
+          # Reemplazar enlaces CSS en todos los archivos HTML
+          find . -name "*.html" -type f -exec sed -i "s/\.css\"/\.css?v=$VERSION\"/g" {} +
+          # Reemplazar enlaces JS en todos los archivos HTML
+          find . -name "*.html" -type f -exec sed -i "s/\.js\"/\.js?v=$VERSION\"/g" {} +
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
