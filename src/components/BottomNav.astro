@@ -3,24 +3,24 @@ const currentPath = Astro.url.pathname;
 const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
 ---
 
-<nav class="global-bottom-nav box-gen" id="global-bottom-nav">
+<nav
+  id="global-bottom-nav"
+  class="global-bottom-nav box-gen"
+  aria-label="Navegación principal"
+>
   <div class="nav-links">
-    <!-- Active projector element -->
     <div class="nav-projector" id="nav-projector"></div>
-    
+
     <a href={`${baseUrl}/#home`} class="nav-item" data-section="home">Inicio</a>
     <a href={`${baseUrl}/proyectos`} class="nav-item" data-section="proyectos">Proyectos</a>
-    <a href={`${baseUrl}/servicios`} class="nav-item" data-section="servicios">Servicios</a>
     <a href={`${baseUrl}/#stack`} class="nav-item" data-section="stack">Stack</a>
-    
+
     <div class="nav-divider"></div>
-    
-    <button class="theme-toggle" aria-label="Cambiar tema">
-      <!-- Icono de Luna (Modo Oscuro) -->
+
+    <button class="theme-toggle" aria-label="Cambiar tema" type="button">
       <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
       </svg>
-      <!-- Icono de Sol (Modo Claro) -->
       <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="4"></circle>
         <path d="M12 2v2"></path>
@@ -45,11 +45,11 @@ const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL
     z-index: 1000;
     border-radius: 2rem;
     padding: 0.4rem;
-    background: var(--nav-bg);
+    background: var(--color-nav);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--nav-border);
-    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+    border: 1px solid var(--color-nav-border);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
   }
 
@@ -63,29 +63,31 @@ const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL
     position: relative;
     z-index: 2;
     padding: 0.5rem 1rem;
-    color: var(--text-muted);
+    color: var(--color-fg-muted);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
     border-radius: 1.5rem;
     transition: color 0.3s ease;
+    font-family: var(--font-body);
   }
 
-  .nav-item:hover {
-    color: var(--text-main);
-  }
+  .nav-item:hover { color: var(--color-fg); }
 
   .nav-item.active {
-    color: #171717; /* Contraste sobre el proyector verde */
+    color: #ffffff;
     font-weight: 600;
   }
+
+  [data-theme="light"] .nav-item.active { color: #ffffff; }
 
   .nav-projector {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #a3e635; /* Color brand */
+    background: linear-gradient(135deg, var(--color-coral) 0%, var(--color-amber) 100%);
+    box-shadow: 0 0 16px rgba(76, 132, 255, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
     border-radius: 1.5rem;
     z-index: 1;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -93,20 +95,25 @@ const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL
     pointer-events: none;
   }
 
+  [data-theme="light"] .nav-projector {
+    box-shadow: 0 0 16px rgba(2, 83, 253, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
   .nav-divider {
     width: 1px;
     height: 1.2rem;
-    background-color: var(--nav-divider);
+    background-color: var(--color-fg-muted);
+    opacity: 0.3;
     margin: 0 0.5rem;
   }
 
   .theme-toggle {
     background: none;
     border: none;
-    color: var(--text-muted);
+    color: var(--color-fg-muted);
     cursor: pointer;
     padding: 0.5rem;
-    border-radius: 50%;
+    border-radius: 9999px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,51 +122,29 @@ const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL
   }
 
   .theme-toggle:hover {
-    color: var(--text-main);
+    color: var(--color-fg);
     transform: rotate(45deg);
   }
 
-  /* Logic for Theme Icons */
-  :global([data-theme="light"]) .theme-toggle .moon-icon {
-    display: block;
-  }
-  :global([data-theme="light"]) .theme-toggle .sun-icon {
-    display: none;
-  }
-  .theme-toggle .moon-icon {
-    display: none;
-  }
-  .theme-toggle .sun-icon {
-    display: block;
-  }
+  :global([data-theme="light"]) .theme-toggle .moon-icon { display: block; }
+  :global([data-theme="light"]) .theme-toggle .sun-icon { display: none; }
+  .theme-toggle .moon-icon { display: none; }
+  .theme-toggle .sun-icon { display: block; }
 
   @media (max-width: 640px) {
-    .nav-item {
-      padding: 0.5rem 0.75rem;
-      font-size: 0.75rem;
-    }
-    .global-bottom-nav {
-      width: 90vw;
-      max-width: 400px;
-    }
-    .nav-links {
-      justify-content: space-around;
-      width: 100%;
-    }
+    .nav-item { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+    .global-bottom-nav { width: 90vw; max-width: 400px; }
+    .nav-links { justify-content: space-around; width: 100%; }
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Theme Toggle Logic
     const themeToggle = document.querySelector('.theme-toggle');
     const getPreferredTheme = () => {
-      if (localStorage.getItem('theme')) {
-        return localStorage.getItem('theme');
-      }
+      if (localStorage.getItem('theme')) return localStorage.getItem('theme');
       return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
     };
-
     const setTheme = (theme) => {
       if (theme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
@@ -168,15 +153,11 @@ const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL
       }
       localStorage.setItem('theme', theme);
     };
-
-    // Initialize theme
     setTheme(getPreferredTheme());
-
     if (themeToggle) {
       themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
+        setTheme(currentTheme === 'light' ? 'dark' : 'light');
       });
     }
 
@@ -184,87 +165,41 @@ const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL
     const projector = document.getElementById('nav-projector');
     const items = document.querySelectorAll('.global-bottom-nav .nav-item');
     const sections = Array.from(items).map(item => document.getElementById(item.dataset.section)).filter(Boolean);
-    
     if (!projector || !items.length) return;
-
     let currentActive = null;
-
     const updateProjector = (element) => {
-      if (!element) {
-        projector.style.opacity = '0';
-        return;
-      }
+      if (!element) { projector.style.opacity = '0'; return; }
       const rect = element.getBoundingClientRect();
       const navRect = nav.getBoundingClientRect();
-      
       projector.style.width = `${rect.width}px`;
-      projector.style.transform = `translateX(${rect.left - navRect.left - 6}px)`; // offset for padding
+      projector.style.transform = `translateX(${rect.left - navRect.left - 6}px)`;
       projector.style.opacity = '1';
     };
-
     const setActive = (item) => {
       items.forEach(i => i.classList.remove('active'));
-      if (item) {
-        item.classList.add('active');
-        currentActive = item;
-        updateProjector(item);
-      } else {
-        currentActive = null;
-        updateProjector(null);
-      }
+      if (item) { item.classList.add('active'); currentActive = item; updateProjector(item); }
+      else { currentActive = null; updateProjector(null); }
     };
-
-    // Scrollspy Logic
     if (sections.length > 0) {
-      const observerOptions = {
-        root: null,
-        rootMargin: '-50% 0px -50% 0px',
-        threshold: 0
-      };
-
       const observer = new IntersectionObserver((entries) => {
         let visibleSection = null;
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            visibleSection = entry.target.id;
-          }
-        });
-
+        entries.forEach(entry => { if (entry.isIntersecting) visibleSection = entry.target.id; });
         if (visibleSection) {
           const targetItem = Array.from(items).find(item => item.dataset.section === visibleSection);
           if (targetItem) setActive(targetItem);
         }
-      }, observerOptions);
-
+      }, { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 });
       sections.forEach(section => observer.observe(section));
     } else {
-      // If we are not on the index page (no sections found), maybe check pathname
       const path = window.location.pathname;
-      if (path.includes('servicios')) {
-        const servicesItem = Array.from(items).find(item => item.dataset.section === 'servicios');
-        if (servicesItem) setActive(servicesItem);
-      } else if (path.includes('proyectos')) {
-        const projectsItem = Array.from(items).find(item => item.dataset.section === 'proyectos');
-        if (projectsItem) setActive(projectsItem);
+      if (path.includes('proyectos')) {
+        setActive(Array.from(items).find(item => item.dataset.section === 'proyectos'));
       } else {
-        // Fallback for home if sections aren't strictly observed
-        const homeItem = Array.from(items).find(item => item.dataset.section === 'home');
-        if (homeItem) setActive(homeItem);
+        setActive(Array.from(items).find(item => item.dataset.section === 'home'));
       }
     }
-
-    // Hover effect
-    items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        updateProjector(item);
-      });
-    });
-
-    document.querySelector('.nav-links').addEventListener('mouseleave', () => {
-      updateProjector(currentActive);
-    });
-
-    // Smooth scroll for anchors
+    items.forEach(item => item.addEventListener('mouseenter', () => updateProjector(item)));
+    document.querySelector('.nav-links').addEventListener('mouseleave', () => updateProjector(currentActive));
     items.forEach(item => {
       item.addEventListener('click', (e) => {
         const targetId = item.dataset.section;
@@ -273,7 +208,6 @@ const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL
           if (targetElement) {
             e.preventDefault();
             targetElement.scrollIntoView({ behavior: 'smooth' });
-            // Optional: update URL hash without jump
             window.history.pushState(null, null, `#${targetId}`);
           }
         }

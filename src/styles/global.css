@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+/* ========================================
+   THEME CONTROL via @custom-variant
+   ========================================
+   Enables `dark:` and `light:` utility modifiers
+   bound to the [data-theme] attribute instead
+   of the OS preference, so the toggle in the
+   BottomNav controls the entire site.
+*/
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
+/* ========================================
+   MICRUDEV DESIGN SYSTEM TOKENS
+   ======================================== */
+@theme {
+  /* Canvas (Deep Space Navy / Soft Gray) */
+  --color-canvas: #040B1F;
+  --color-canvas-light: #F6F8FC;
+
+  /* Foreground inversion (white ↔ navy) */
+  --color-white: #ffffff;
+  --color-white-light: #06132F;
+
+  /* Pure black for shadows / inverses */
+  --color-black: #000000;
+  --color-black-light: #ffffff;
+
+  /* Muted text (slate blue / slate gray) */
+  --color-muted: #8B9BB4;
+  --color-muted-light: #637089;
+
+  /* Aurora Accent Colors (Corporate Blue) */
+  --color-crimson: #003DCC;
+  --color-coral: #0253FD;
+  --color-amber: #4C84FF;
+
+  /* Aurora Blade Tokens */
+  --color-aurora-1: #0253FD;
+  --color-aurora-2: #4C84FF;
+  --color-aurora-3: #001A66;
+  --color-aurora-4: #003DCC;
+  --color-aurora-5: #6B9DFF;
+
+  /* Semantic tokens (dark defaults) */
+  --color-bg: var(--color-canvas);
+  --color-fg: var(--color-white);
+  --color-fg-muted: var(--color-muted);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-glass: rgba(24, 24, 27, 0.18);
+  --color-nav: rgba(4, 11, 31, 0.75);
+  --color-nav-border: rgba(76, 132, 255, 0.15);
+  --color-modal: rgba(4, 11, 31, 0.85);
+  --color-btn-primary: #ffffff;
+  --color-btn-primary-fg: #040B1F;
+
+  /* Typography */
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Easings */
+  --ease-micrudev: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-snap: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Light theme overrides */
+[data-theme="light"] {
+  --color-bg: #F6F8FC;
+  --color-fg: #06132F;
+  --color-fg-muted: #637089;
+  --color-border: rgba(0, 61, 204, 0.1);
+  --color-glass: rgba(255, 255, 255, 0.32);
+  --color-nav: rgba(246, 248, 252, 0.8);
+  --color-nav-border: rgba(0, 61, 204, 0.12);
+  --color-modal: rgba(255, 255, 255, 0.92);
+  --color-btn-primary: #06132F;
+  --color-btn-primary-fg: #ffffff;
+}
+
+/* ========================================
+   BASE
+   ======================================== */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-body);
+    font-feature-settings: 'liga' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Italic ban per Micrudev rules */
+  i, em, .italic { font-style: normal !important; }
+}
+
+/* ========================================
+   DEEP SPACE AURORA BACKGROUND
+   (Architectural primitives — @layer components)
+   ======================================== */
+@layer components {
+  .deep-space-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background-color: var(--color-bg);
+  }
+
+  .aurora-blade {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(110px);
+    will-change: transform, opacity;
+    pointer-events: none;
+  }
+
+  .blade-center {
+    width: 50vw;
+    height: 50vw;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-aurora-2);
+    opacity: 0.2;
+    animation: drift-center 30s infinite alternate ease-in-out;
+  }
+
+  .deep-space-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.2;
+    mask-image: radial-gradient(ellipse at center, black 0%, black 50%, transparent 90%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 0%, black 50%, transparent 90%);
+  }
+
+  [data-theme="light"] .deep-space-grid { opacity: 0.1; }
+
+  .deep-space-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(4, 11, 31, 0.6) 100%);
+  }
+
+  [data-theme="light"] .deep-space-vignette {
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(246, 248, 252, 0.4) 100%);
+  }
+
+  .deep-space-letterbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+       background: linear-gradient(to right, transparent 0%, #0253fd 50%, transparent 100%);
+    box-shadow:
+      0 0 20px var(--color-aurora-1),
+      0 0 40px var(--color-aurora-1),
+      0 0 80px var(--color-aurora-1);
+    opacity: 1;
+  }
+
+  [data-theme="light"] .deep-space-letterbox {
+    background: linear-gradient(to right, transparent, var(--color-aurora-4), transparent);
+    box-shadow:
+      0 0 20px var(--color-aurora-4),
+      0 0 40px var(--color-aurora-4),
+      0 0 80px var(--color-aurora-4);
+  }
+
+  /* Glass card primitive (Micrudev design system) */
+  .box-gen {
+    position: relative;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-glass);
+    background-image: linear-gradient(180deg, rgba(76, 132, 255, 0.025) 0%, rgba(76, 132, 255, 0) 100%);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    box-shadow:
+      0 4px 24px rgba(4, 11, 31, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .box-gen:hover {
+    border-color: rgba(76, 132, 255, 0.4);
+    background-color: rgba(24, 24, 27, 0.28);
+    box-shadow:
+      0 8px 32px rgba(2, 83, 253, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  [data-theme="light"] .box-gen {
+    background-color: rgba(255, 255, 255, 0.32);
+  }
+  [data-theme="light"] .box-gen:hover { border-color: rgba(0, 61, 204, 0.35); background-color: rgba(255, 255, 255, 0.5); }
+
+  .shadow-pop {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@layer utilities {
+  .font-body { font-family: var(--font-body); }
+  .font-mono { font-family: var(--font-mono); }
+  .text-muted { color: var(--color-fg-muted); }
+  .ease-micrudev { transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+}
+
+/* ========================================
+   KEYFRAMES (GPU-friendly: transform/opacity)
+   ======================================== */
+@keyframes drift-center {
+  0%   { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  100% { transform: translate(-50%, -50%) rotate(20deg) scale(1.1); }
+}
+
+@keyframes ping {
+  0% { transform: scale(1); opacity: 1; }
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes scroll-stack {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .aurora-blade { filter: blur(70px); }
+  .blade-center { width: 90vw; height: 90vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blade,
+  .deep-space-letterbox,
+  [class*="animate-"] { animation: none !important; }
+}
